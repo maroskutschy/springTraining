@@ -16,20 +16,31 @@ public class SpringRun {
 
   }
 
-  @Bean
-  public CommandLineRunner runner(HelloWorld helloWorld) {
-    //return  new MyCommandLineRunner();
-//    return  new CommandLineRunner() {
-//      @Override public void run(String... args) throws Exception {
-//        System.out.println("Running");
-//      }
+//  @Bean
+//  public CommandLineRunner runner(HelloWorld helloWorld) {
+//    //return  new MyCommandLineRunner();
+////    return  new CommandLineRunner() {
+////      @Override public void run(String... args) throws Exception {
+////        System.out.println("Running");
+////      }
+////    };
+//
+//
+//
+//
+//
+//    return (args) -> {
+//      System.out.println("Running");
+//      helloWorld.sayHello();
 //    };
+//  }
 
-    return (args) -> {
-      System.out.println("Running");
-      helloWorld.sayHello();
-    };
+
+  @Bean
+  public CommandLineRunner runner(MyApplication myApplication){
+    return  args -> myApplication.execute();
   }
+
 
 //    public class MyCommandLineRunner implements  CommandLineRunner{
 //      @Override
@@ -38,5 +49,12 @@ public class SpringRun {
 //      }
 //    }
 
+//  @Bean
+//  public MyApplication myApplication (HelloWorld helloWorld) {
+//    return new MyApplication(helloWorld);
+//  }
+
 
 }
+
+

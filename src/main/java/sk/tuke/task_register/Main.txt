@@ -1,0 +1,34 @@
+package sk.tuke.task_register;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import sk.tuke.MyApplication;
+import sk.tuke.SpringRun;
+
+@SpringBootApplication
+public class Main {
+
+	public static void main(String[] args) {
+
+    SpringApplication.run( Main.class, args );
+
+
+//		Register register = new Register();
+//        register.addPerson(new Person("Janko Hrasko", "0900123456"));
+//        register.addPerson(new Person("Ferko Hrasko", "0900123456"));
+//        register.addPerson(new Person("Zuza Hrasko", "0900123456"));
+//        register.addPerson(new Person("Anca Hrasko", "0900123456"));
+//
+//        ConsoleUI ui = new ConsoleUI(register);
+//        ui.run();
+	}
+
+
+  @Bean
+  public CommandLineRunner runner(ConsoleUI consoleui){
+    return  args -> consoleui.run();
+
+  }
+}

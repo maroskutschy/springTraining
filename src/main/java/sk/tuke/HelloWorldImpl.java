@@ -14,4 +14,9 @@ public class HelloWorldImpl implements HelloWorld {
     System.out.println("Hello World");
 
   }
+
+  public int returnInt() {
+    //return  100;
+    throw new RuntimeException( "chyba" );
+  }
 }

@@ -12,7 +12,9 @@ public class MyApplication {
 //  public MyApplication (HelloWorld helloWorld) { this.helloWorld = helloWorld;}
 
   public void execute() {
+
     helloWorld.sayHello();
+    helloWorld.returnInt();
   }
 
 }

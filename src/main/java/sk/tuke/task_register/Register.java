@@ -1,5 +1,7 @@
 package sk.tuke.task_register;
 
+import sk.tuke.task_register.aspect.Log;
+
 public interface Register {
   int getCount();
 

@@ -1,13 +1,8 @@
-package sk.tuke.task_register;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-import sk.tuke.task_register.aspect.Log;
+package sk.tuke.task_register_2;
 
 /**
  * Person.
  */
-
 public class Person {
     /** Name of this person. */
     private String name;
@@ -73,7 +68,6 @@ public class Person {
      * Returns a string representation of the person.
      * @return string representation of the person.
      */
-    @Log
     public String toString() {
         return  name + " (" + phoneNumber + ")";
     }

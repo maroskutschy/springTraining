@@ -1,9 +1,14 @@
 package sk.tuke.task_register;
 
 import org.springframework.stereotype.Component;
+import sk.tuke.task_register.aspect.Log;
+import sk.tuke.task_register.aspect.Role;
+import sk.tuke.task_register.aspect.RoleType;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static sk.tuke.task_register.aspect.RoleType.*;
 
 //@Component
 /**
@@ -18,6 +23,7 @@ public class RegisterImpl implements Register {
 	 *
 	 * @return the number of persons in this register
 	 */
+	@Role( GUEST )
 	@Override public int getCount() {
 		return persons.size();
 	}
@@ -39,6 +45,8 @@ public class RegisterImpl implements Register {
 	 * @param person
 	 *            person to append to this register
 	 */
+	@Role(RoleType.ADMIN )
+	@Log
 	@Override public void addPerson(Person person) {
 		persons.add(person);
 	}
@@ -51,6 +59,7 @@ public class RegisterImpl implements Register {
 	 *            name of a person to search for
 	 * @return person with specified phone number
 	 */
+	@Role( USER )
 	@Override public Person findPersonByName(String name) {
 		for (Person person : persons) {
 			if(person.getName().equals(name)) {
@@ -68,6 +77,7 @@ public class RegisterImpl implements Register {
 	 *            phone number of a person to search for
 	 * @return person with specified phone number
 	 */
+	@Role( USER )
 	@Override public Person findPersonByPhoneNumber(String phoneNumber) {
 		for (Person person : persons) {
 			if(person.getPhoneNumber().equals(phoneNumber)) {
@@ -83,6 +93,7 @@ public class RegisterImpl implements Register {
 	 * @param person
 	 *            person to remove
 	 */
+	@Role( ADMIN )
 	@Override public void removePerson(Person person) {
 		persons.remove(person);
 	}

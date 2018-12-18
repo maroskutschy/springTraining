@@ -17,6 +17,6 @@ public class ContactService {
   }
 
   public List<Contact> getContact() {
-    return entityManager.createQuery("select c from Cotact c").getResultList();
+    return entityManager.createQuery("select c from Contact c").getResultList();
   }
 }

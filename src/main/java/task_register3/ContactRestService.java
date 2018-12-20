@@ -23,4 +23,10 @@ public class ContactRestService {
 
   }
 
+  @DeleteMapping("/rest/contact/{id}")
+  public void deleteContact(@PathVariable("id") int id) {
+    contactService.deleteContact( id );
+    System.out.println("Delete " + id);
+  }
+
 }

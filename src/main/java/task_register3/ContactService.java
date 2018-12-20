@@ -19,4 +19,9 @@ public class ContactService {
   public List<Contact> getContact() {
     return entityManager.createQuery("select c from Contact c").getResultList();
   }
+
+  public void deleteContact (int id) {
+    entityManager.remove( entityManager.find( Contact.class, id ) );
+  }
 }
+

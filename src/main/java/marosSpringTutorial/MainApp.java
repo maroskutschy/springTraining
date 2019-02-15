@@ -8,5 +8,11 @@ public class MainApp {
     ApplicationContext context = new ClassPathXmlApplicationContext( "Beans.xml");
     HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
     obj.getMessage();
+
+    Maros maros = (Maros) context.getBean( "maros" );
+    maros.getMarosMessage();
+
+    TextEditor textEditor = (TextEditor) context.getBean( "textEditor" );
+    textEditor.spellCheck();
   }
 }
